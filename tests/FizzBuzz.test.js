@@ -34,13 +34,13 @@ describe('FizzBuzz', () => {
         }
     });
    
-    it('if number has 3 return Fizz', () => {
+    it('if number has 3 or divisible by 3 return Fizz', () => {
         const numb=13
         const fizzBuzz = new FizzBuzzStage2()
         const result = fizzBuzz.check(numb);
         assert.equal(result,"Fizz")
     });
-    it('if number has 5 return buzz', () => {
+    it('if number has 5 or divisible by 3 return return buzz', () => {
         const numb=25
         const fizzBuzz = new FizzBuzzStage2()
         const result = fizzBuzz.check(numb);
