@@ -12,5 +12,12 @@ export default class FizzBuzzStage2 {
         }
     }
     
+    FizzBuzzArray() {
+        const result = [];
+        for (let i = 1; i <= 100; i++) {
+            result.push(this.check(i));
+        }
+        return result;
+    }
   
 }

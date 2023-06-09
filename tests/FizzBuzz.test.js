@@ -47,5 +47,15 @@ describe('FizzBuzz', () => {
         assert.equal(result,"Buzz")
     });
 
-
+    it('generates the array with correct values, now in stage 2', () => {
+        const expected = [
+            1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz",
+            11, "Fizz", "Fizz", 14, "FizzBuzz", 16, 17, "Fizz", 19, "Buzz"
+        ];
+        const fizzBuzz = new FizzBuzzStage2()
+        const result =  fizzBuzz.FizzBuzzArray();
+        for (let i = 0; i < expected.length; i++) {
+            assert.equal(result[i], expected[i]);
+        }
+    });
 });
