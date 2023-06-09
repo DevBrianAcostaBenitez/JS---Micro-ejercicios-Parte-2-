@@ -3,14 +3,20 @@ export default class FizzBuzz {
         const numberAsString = numb.toString();
         if(numb % 3 == 0 && numb % 5 == 0){
             return "FizzBuzz"
-        }else if (numb % 3 == 0 || numberAsString.includes("3") ){
+        }else if (numb % 3 == 0  ){
             return  "Fizz"
-        }else if(numb % 5 == 0 || numberAsString.includes("5")){
+        }else if(numb % 5 == 0 ){
             return  "Buzz"
         }else{
-            return  "neither divisible for 3 nor 5"
+            return numb
         }
     }
     
-
+    FizzBuzzArray() {
+        const result = [];
+        for (let i = 1; i <= 100; i++) {
+            result.push(this.check(i));
+        }
+        return result;
+    }
 }
