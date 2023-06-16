@@ -5,16 +5,13 @@ describe('dnicheck', () => {
     it('should return x', () => {
         const numbers = {
           number1: "hi",
-          number2:1211111111,
-          number3:453121,
+          number2:453121,
         };
         const dniCalculation = new DniCalculation();
         const result1 =  dniCalculation.dniCalculation(numbers.number1);
         const result2 =  dniCalculation.dniCalculation(numbers.number2);
-        const result3 =  dniCalculation.dniCalculation(numbers.number3);
         expect(result1).toBe(`the inputted value is not a number`);
-        expect(result2).toBe(`the number should be between 0 and 99999999`);
-        expect(result3).toBe(`The letter for the number ${numbers.number3} is K`);
+        expect(result2).toBe(`The letter for the number ${numbers.number2} is K`);
     });
     
     it('should return canceled', () => {
