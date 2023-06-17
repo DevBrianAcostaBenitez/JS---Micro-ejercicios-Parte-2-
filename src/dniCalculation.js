@@ -7,12 +7,9 @@ export class DniCalculation {
   dniCalculation(number) {
     let cancelled = false;
     while (cancelled == false) {
-      while (number==null){
-        number = this.promptForNumber()
-      }
       const isTestEnvironment = typeof window === "undefined";
       if (!isTestEnvironment) {
-        number = this.promptForNumber()
+          number = this.promptForNumber()
       }
       if (isNaN(number)) {
         if (number === "cancel") {
@@ -27,11 +24,8 @@ export class DniCalculation {
           if (isTestEnvironment) {
             return "the inputted value is not a number";
           } else {
-            while (isNaN(number)) {
-              alert("the inputted value is not a number");
-              number = this.promptForNumber()
-              continue;
-            }
+            alert("the inputted value is not a number")
+            continue;
           }
         }
       }
@@ -40,11 +34,8 @@ export class DniCalculation {
         if (isTestEnvironment) {
           return "the number should be between 0 and 99999999";
         } else {
-          while (number < 0 || number > 99999999) {
             alert("the number should be between 0 and 99999999");
-            number = this.promptForNumber()
             continue;
-          }
         }
       }
       const remainder = number % 23;
