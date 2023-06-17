@@ -2,16 +2,16 @@ export class DrivingAge {
     check(person) {
       const isTestEnvironment = typeof window === "undefined";
       if (person.age >= 18) {
-        if (isTestEnvironment) {
+          if (isTestEnvironment) {
         return person.name + " is "+ person.age + " and can drive";
         }else{
-        alert (person.name + " is "+ person.age + " and can drive");
+          alert (person.name + " is "+ person.age + " and can drive");
         }
       } else {
-        if (isTestEnvironment) {
+          if (isTestEnvironment) {
         return person.name + " is "+ person.age + " and can\'t drive";
         }else{
-        alert (person.name + " is "+ person.age + " and can\'t drive");
+          alert (person.name + " is "+ person.age + " and can\'t drive");
         }
       }
     }
