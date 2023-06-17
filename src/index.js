@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function AgeCheck() {
     const drivingAge = new DrivingAge();
     let person= {
-        name: "",
-        age: -10,
+        name: null,
+        age: null,
     };
     person.name = prompt("please write your name");
     person.age = prompt("now write your age")
-    if(person.name === "" || person.age === -10) {
+    if (person.name === null || person.name === "" || person.age === null || person.age === ""){
         alert("invalid values")
     }else{
     drivingAge.check(person);
