@@ -10,8 +10,8 @@ describe('dnicheck', () => {
         const dniCalculation = new DniCalculation();
         const result1 =  dniCalculation.dniCalculation(numbers.number1);
         const result2 =  dniCalculation.dniCalculation(numbers.number2);
-        expect(result1).toBe(`the inputted value is not a number`);
-        expect(result2).toBe(`The letter for the number ${numbers.number2} is K`);
+        expect(result1).toBe("the inputted value is not a number");
+        expect(result2).toBe("The letter for the number " + numbers.number2 + " is K");
     });
     
     it('should return canceled', () => {
@@ -24,8 +24,8 @@ describe('dnicheck', () => {
         const result1 = dniCalculation.dniCalculation(numbers.number1);
         const result2 = dniCalculation.dniCalculation(numbers.number2);
         const result3 = dniCalculation.dniCalculation(numbers.number3);
-        expect(result1).toBe(`the inputted value is not a number`);
-        expect(result2).toBe(`the inputted value is not a number`);
-        expect(result3).toBe(`cancelled`);
+        expect(result1).toBe("the inputted value is not a number");
+        expect(result2).toBe("the inputted value is not a number");
+        expect(result3).toBe("cancelled");
     });
 });

@@ -9,16 +9,16 @@ describe('drivingAge', () => {
         };
         const drivingAge = new DrivingAge();
         const result = drivingAge.check(person);
-        expect(result).toBe(`${person.name} is ${person.age} and can drive`);
+        expect(result).toBe(person.name + " is "  + person.age + " and can drive");
     });
     
-    it('should return can\'t drive', () => {
+    it('should return cannot drive', () => {
         const person = {
           name: 'Lucy',
           age: 12,
         };
         const drivingAge = new DrivingAge();
         const result = drivingAge.check(person);
-        expect(result).toBe(`${person.name} is ${person.age} and can't drive`);
+        expect(result).toBe(person.name + " is "+ person.age + " and can\'t drive");
     });
 });

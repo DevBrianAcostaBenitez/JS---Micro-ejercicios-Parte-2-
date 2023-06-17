@@ -7,11 +7,12 @@ export class DniCalculation {
   dniCalculation(number) {
     let cancelled = false;
     while (cancelled == false) {
+      while (number==null){
+        number = this.promptForNumber()
+      }
       const isTestEnvironment = typeof window === "undefined";
       if (!isTestEnvironment) {
-        number = prompt(
-          "Please enter a number, you can cancel this program at any time by inputting cancel"
-        );
+        number = this.promptForNumber()
       }
       if (isNaN(number)) {
         if (number === "cancel") {
@@ -28,9 +29,8 @@ export class DniCalculation {
           } else {
             while (isNaN(number)) {
               alert("the inputted value is not a number");
-              number = prompt(
-                "Please enter a number, you can cancel this program at any time by inputting cancel"
-              );
+              number = this.promptForNumber()
+              continue;
             }
           }
         }
@@ -42,9 +42,8 @@ export class DniCalculation {
         } else {
           while (number < 0 || number > 99999999) {
             alert("the number should be between 0 and 99999999");
-            number = prompt(
-              "Please enter a number, you can cancel this program at any time by inputting cancel"
-            );
+            number = this.promptForNumber()
+            continue;
           }
         }
       }
@@ -57,11 +56,11 @@ export class DniCalculation {
       }
     }
   }
+
+  promptForNumber(){
+    return prompt(
+      "Please enter a number, you can cancel this program at any time by inputting cancel"
+    );
+  }
 }
 
-if (typeof window !== "undefined") {
-  document.addEventListener("DOMContentLoaded", function () {
-    const dniCalc = new DniCalculation();
-    dniCalc.dniCalculation("");
-  });
-}
