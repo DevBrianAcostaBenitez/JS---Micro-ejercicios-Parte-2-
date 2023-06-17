@@ -14,11 +14,11 @@ describe('dnicheck', () => {
         expect(result2).toBe("The letter for the number " + numbers.number2 + " is K");
     });
     
-    it('should return canceled', () => {
+    it('should return the number should be between 0 and 99999999', () => {
         const numbers = {
             number1: "hi",
             number2:"it's me",
-            number3:"cancel",
+            number3:45314343423421,
         };
         const dniCalculation = new DniCalculation();
         const result1 = dniCalculation.dniCalculation(numbers.number1);
@@ -26,6 +26,6 @@ describe('dnicheck', () => {
         const result3 = dniCalculation.dniCalculation(numbers.number3);
         expect(result1).toBe("the inputted value is not a number");
         expect(result2).toBe("the inputted value is not a number");
-        expect(result3).toBe("cancelled");
+        expect(result3).toBe("the number should be between 0 and 99999999");
     });
 });

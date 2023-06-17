@@ -20,9 +20,13 @@ function AgeCheck() {
     const drivingAge = new DrivingAge();
     let person= {
         name: "",
-        age: 0,
+        age: -10,
     };
     person.name = prompt("please write your name");
     person.age = prompt("now write your age")
+    if(person.name === "" || person.age === -10) {
+        alert("invalid values")
+    }else{
     drivingAge.check(person);
+    }
 }

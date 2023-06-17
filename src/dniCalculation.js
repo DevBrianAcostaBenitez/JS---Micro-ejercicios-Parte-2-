@@ -5,30 +5,23 @@ export class DniCalculation {
       ];
     }
   dniCalculation(number) {
-    let cancelled = false;
-    while (cancelled == false) {
+    while (true) {
       const isTestEnvironment = typeof window === "undefined";
       if (!isTestEnvironment) {
           number = this.promptForNumber()
+          if (number === null) {
+            break
+          }
       }
       if (isNaN(number)) {
-        if (number === "cancel") {
-          if (isTestEnvironment) {
-            return "cancelled";
-          } else {
-            alert("program finished");
-            cancelled == true;
-            break;
-          }
-        } else {
           if (isTestEnvironment) {
             return "the inputted value is not a number";
           } else {
             alert("the inputted value is not a number")
             continue;
           }
-        }
       }
+      
 
       if (number < 0 || number > 99999999) {
         if (isTestEnvironment) {
@@ -50,7 +43,7 @@ export class DniCalculation {
 
   promptForNumber(){
     return prompt(
-      "Please enter a number, you can cancel this program at any time by inputting cancel"
+      "Please enter a number, you can cancel this program at any time by pressing cancel"
     );
   }
 }
